@@ -18,3 +18,25 @@ Predisporre un campo di input testuale e un pulsante "aggiungi": cliccando sul p
 Bonus:
 1 - cliccando sul testo dell'item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa)
 2 -  aggiungere un altro bottone che permetta la modifica di un task gia' esistente
+
+
+scomposizione del problema:
+
+    1) Creare una struttura HTML di base per la to-do list:
+        - Creare un contenitore per l'app Vue.js.
+        - Creare una lista HTML per visualizzare i todo.
+        - Creare un campo di input e un pulsante per aggiungere nuovi todo.
+
+    2) Implementare il rendering dei todo con Vue.js:
+        - Inizializzare un'istanza Vue.
+        - Definire i dati per i todo.
+        - Visualizzare ogni todo in un elemento della lista.
+        - Applicare una classe di stile per visualizzare il testo sbarrato se il todo è completato.
+
+    3) Aggiungere la funzionalità di rimozione dei todo:
+        - Aggiungere un elemento "x" accanto a ogni todo.
+        - Implementare un metodo per rimuovere un todo quando si clicca sulla "x".
+
+    4) Aggiungere la funzionalità di aggiunta dei todo:
+        - Collegare il campo di input ai dati di Vue.
+        - Implementare un metodo per aggiungere un nuovo todo alla lista esistente quando si clicca sul pulsante o si preme il tasto Invio.
