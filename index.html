@@ -9,14 +9,36 @@
 </head>
 <body>
     <div id="app">
-        <ul class="todoList">
+        <header></header>
+        
+        <main>
+            <section class="todo-list-wrapper">
+                <h2>
+                    TODO LIST
+                </h2>
+                <ul class="todoList">
+                    <li class="list-item" v-for="(item, index) in listElements" :key="index" :class="(item.done === true) ? 'done': '' " @click="toggleDone(index)">
 
-        </ul>
-        <div class="input-section">
-            <input type="text" placeholder="Inserire un nuovo elemento da aggiugere alla lista">
-            <button>Aggiungi</button>
+                        <span @click="toggleDone(index)" :class="(item.done === true) ? 'done' : '' ">
+                            {{item.text}}
+                        </span>
 
-        </div>
+                        <i @click="removeTask(index)"> X</i>
+
+                    </li>
+                </ul>
+            </section>
+
+            <section class="input">
+                <div>
+                    <label for="new-todo-input">Inserisci un nuovo elemento alla lista</label>
+                    <input type="text" id="new-todo-input" v-model="newTaskContent" @keyup.enter="addNewTask(newTaskContent)">
+                </div>
+
+            </section>
+            
+        </main>
+        
 
     </div>
 

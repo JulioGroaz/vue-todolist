@@ -1,9 +1,11 @@
 const app = Vue.createApp({
     data(){
-        listElements:[
+        return{
+          listElements : [
             {
                 text:'Comprare Latte',
                 done: 'false',
+                
             },
             {
                 text:'Comprare Lanciafiamme',
@@ -14,9 +16,34 @@ const app = Vue.createApp({
                 done: 'false',
             },
         ],
-         newListItem: ''
+         
+        }
+        
 
     },
+    methods: {
+        toggleDone: function(itemIndex){    //inverte il done
+            this.listElements[itemIndex].done= !this.listElements[itemIndex].done;
+        },
 
-});
-app.mount('#app');
+        //aggiungo una task
+        addNewTask: function(newContent){
+            const newTask ={
+                text: newContent,
+                done: false
+            }
+            this.listElements.push(newTask);
+            this.clearNewTaskInput ();
+        },
+
+        //libera input 
+        clearNewTaskInput(){
+            this.newTaskContent= '';
+        },
+
+        removeTask: function(taskIndex){
+            this.listElements.splice(taskIndex,1);
+        }
+
+    },
+}).mount('#app');
